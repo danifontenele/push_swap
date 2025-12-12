@@ -2,7 +2,7 @@
 In this project I create a program that get random data and sort it in ascending order with the use of 2 stacks. The goal is sort the numbers with small number of actions as possible.
 
 ## The algorythm
-To this project I'm not using one of the most traditional algorythms, but a problem solving personalized algorythm. It was created by **A. Ygit Ogun**, he named it the **Turk Algorythm**, a reference to the turk, a machine created in the XIX century which could apparently play chess and beat the best masters.
+To this project I'm not using one of the most traditional algorythms, but a problem solving personalized algorythm. It was created by **A. Ygit Ogun**, he named it the **Turk Algorythm**, a reference to the turk, a machine created in the XIX century which could apparently play chess and beat the best masters(it worths to do a little search, is a funny history).
 
 ## The stacks
 The stacks are data organized one in the top of the other. In this projects I can swap data between this two stacks(depending on the case).
