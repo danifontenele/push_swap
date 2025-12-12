@@ -13,7 +13,7 @@ Linked lists consists in data structures linked in order. These data structures 
 
 Nodes are data elements, just like a box containing data inside it, like values or numbers. In this case I'm using a doubly linked list, that is bi-diretional, which means that each the nodes have a reference to the nodes right after and previous.
 
-So, in this case the node has:
+The **node** has:
 - Value.
 - Index.
 - Pointer to the next one.
