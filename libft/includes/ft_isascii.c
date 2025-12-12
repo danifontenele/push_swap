@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/11 13:57:27 by calvares          #+#    #+#             */
-/*   Updated: 2025/12/11 14:01:57 by calvares         ###   ########.fr       */
+/*   Created: 2025/10/17 14:24:55 by calvares          #+#    #+#             */
+/*   Updated: 2025/11/08 19:15:27 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int ac, char **av)
+int	ft_isascii(int c)
 {
-	//declarar e inicializar as stacks(pointers)
-	//verificar os argumentos
-	//funcao que cria a stack a de acordo com os argumentos
-	//se a stack nao estiver em ordem:
-		//algoritmos
+	if (c >= 0 && c <= 127)
+		return (1);
+	return (0);
 }
+
+/* int main(void)
+{
+	printf("D:		%d\n", ft_isascii('D'));
+	printf("4:		%d\n", ft_isascii('4'));
+	printf("~:		%d\n", ft_isascii('~'));
+	printf("new_line:	%d\n", ft_isascii('\n'));
+	printf("ÿ:		%d\n", ft_isascii(255));
+} */
