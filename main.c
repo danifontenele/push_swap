@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 13:57:27 by calvares          #+#    #+#             */
-/*   Updated: 2025/12/12 19:30:18 by calvares         ###   ########.fr       */
+/*   Updated: 2025/12/13 20:06:25 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,10 @@ int	main(int ac, char **av)
 	a = NULL;
 	b = NULL;
 
-	
-	// Verificar os argumentos(tem que haver mais do que 1)
-		// Se encontrar erros, retornar "Error"
 	if (ac == 1 || (ac == 2 && av[1][0] == '\0'))
 		return (1);
 	if (ac == 2)
-		av = split(av[1], ' ');
-		
-	// Funcao para separar os numeros caso seja uma string(split)
+		av = split(av[1], ' '); // Testado: OK!
 
 	// Funcao que monta a stack 'a' adicionando os argumentos como um valor do node
 		// lidar com int overflow, duplicatas, erros de sintaxe, inputs devem ter apenas digitos ou '-' '+'

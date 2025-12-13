@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puthexadecimal_uppercase.c                      :+:      :+:    :+:   */
+/*   ft_puthexadecimal_lowercase.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/09 21:08:58 by calvares          #+#    #+#             */
-/*   Updated: 2025/12/12 20:03:04 by calvares         ###   ########.fr       */
+/*   Created: 2025/11/09 21:08:54 by calvares          #+#    #+#             */
+/*   Updated: 2025/11/11 23:08:38 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-int	ft_puthexadecimal_uppercase(unsigned int nb)
+int	ft_puthexadecimal_lowercase(unsigned int nb)
 {
 	int		re;
 	char	*base;
 
-	base = "0123456789ABCDEF";
 	re = 0;
+	base = "0123456789abcdef";
 	if (nb >= 16)
-		re += ft_puthexadecimal_uppercase(nb / 16);
+		re += ft_puthexadecimal_lowercase(nb / 16);
 	re += ft_putchar(base[nb % 16]);
 	return (re);
 }
 
 /* int main(void)
 {
-	ft_puthexadecimal_uppercase(123); ft_putchar('\n');
-	ft_puthexadecimal_uppercase(1234); ft_putchar('\n');
-	ft_puthexadecimal_uppercase(127); ft_putchar('\n');
-	ft_puthexadecimal_uppercase(255); ft_putchar('\n');
+	ft_puthexadecimal_lowercase(123); ft_putchar('\n');
+	ft_puthexadecimal_lowercase(1234); ft_putchar('\n');
+	ft_puthexadecimal_lowercase(127); ft_putchar('\n');
+	ft_puthexadecimal_lowercase(255); ft_putchar('\n');
 } */

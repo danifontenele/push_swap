@@ -1,38 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/09 21:09:04 by calvares          #+#    #+#             */
-/*   Updated: 2025/12/12 20:04:15 by calvares         ###   ########.fr       */
+/*   Created: 2025/11/09 20:33:17 by calvares          #+#    #+#             */
+/*   Updated: 2025/11/11 23:43:27 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-int	ft_putstr(char *str)
+int	ft_putchar(char c)
 {
-	int	i;
+	int	re;
 
-	if (str == NULL)
-		return (write(1, "(null)", 6));
-	i = 0;
-	while (str[i])
-	{
-		ft_putchar(str[i]);
-		i++;
-	}
-	return (i);
+	re = 0;
+	re += write(1, &c, 1);
+	return (re);
 }
-
-/* int	main(void)
-{
-	char str[] = "1) This is the first string to print\n";
-	char *str2 = "2) This is the second string to print\n";
-	
-	ft_putstr(str);
-	ft_putstr(str2);
-	ft_putstr("3) This is the third string to print\n");
-} */

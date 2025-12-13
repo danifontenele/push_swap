@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putunbr.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/09 21:09:07 by calvares          #+#    #+#             */
-/*   Updated: 2025/12/12 20:04:20 by calvares         ###   ########.fr       */
+/*   Created: 2025/11/09 21:09:04 by calvares          #+#    #+#             */
+/*   Updated: 2025/11/09 21:59:00 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-int	ft_putunbr(unsigned int nb)
+int	ft_putstr(char *str)
 {
-	unsigned int	re;
+	int	i;
 
-	re = 0;
-	if (nb > 9)
+	if (str == NULL)
+		return (write(1, "(null)", 6));
+	i = 0;
+	while (str[i])
 	{
-		re += ft_putunbr(nb / 10);
-		re += ft_putunbr(nb % 10);
+		ft_putchar(str[i]);
+		i++;
 	}
-	else
-		re += ft_putchar (nb + '0');
-	return (re);
+	return (i);
 }
 
 /* int	main(void)
 {
-	ft_putunbr(42); ft_putchar('\n');
-	ft_putunbr(0); ft_putchar('\n');
-	ft_putunbr(-2147483648); ft_putchar('\n');
-	ft_putunbr(4294967295); ft_putchar('\n');
+	char str[] = "1) This is the first string to print\n";
+	char *str2 = "2) This is the second string to print\n";
+	
+	ft_putstr(str);
+	ft_putstr(str2);
+	ft_putstr("3) This is the third string to print\n");
 } */

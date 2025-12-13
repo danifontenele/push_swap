@@ -1,22 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putunbr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/09 20:33:17 by calvares          #+#    #+#             */
-/*   Updated: 2025/12/12 20:02:42 by calvares         ###   ########.fr       */
+/*   Created: 2025/11/09 21:09:07 by calvares          #+#    #+#             */
+/*   Updated: 2025/11/26 18:26:47 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-int	ft_putchar(char c)
+int	ft_putunbr(unsigned int nb)
 {
-	int	re;
+	unsigned int	re;
 
 	re = 0;
-	re += write(1, &c, 1);
+	if (nb > 9)
+	{
+		re += ft_putunbr(nb / 10);
+		re += ft_putunbr(nb % 10);
+	}
+	else
+		re += ft_putchar (nb + '0');
 	return (re);
 }
+
+/* int	main(void)
+{
+	ft_putunbr(42); ft_putchar('\n');
+	ft_putunbr(0); ft_putchar('\n');
+	ft_putunbr(-2147483648); ft_putchar('\n');
+	ft_putunbr(4294967295); ft_putchar('\n');
+} */

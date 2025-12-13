@@ -1,34 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puthexadecimal_lowercase.c                      :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/09 21:08:54 by calvares          #+#    #+#             */
-/*   Updated: 2025/12/12 20:02:54 by calvares         ###   ########.fr       */
+/*   Created: 2025/11/09 21:09:02 by calvares          #+#    #+#             */
+/*   Updated: 2025/11/26 18:26:56 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-int	ft_puthexadecimal_lowercase(unsigned int nb)
+int	ft_putnbr(int nb)
 {
+	long	n;
 	int		re;
-	char	*base;
 
 	re = 0;
-	base = "0123456789abcdef";
-	if (nb >= 16)
-		re += ft_puthexadecimal_lowercase(nb / 16);
-	re += ft_putchar(base[nb % 16]);
+	n = nb;
+	if (n < 0)
+	{
+		re += write (1, "-", 1);
+		n *= -1;
+	}
+	if (n > 9)
+	{
+		re += ft_putnbr(n / 10);
+		re += ft_putnbr(n % 10);
+	}
+	else
+		re += ft_putchar(n + '0');
 	return (re);
 }
 
 /* int main(void)
 {
-	ft_puthexadecimal_lowercase(123); ft_putchar('\n');
-	ft_puthexadecimal_lowercase(1234); ft_putchar('\n');
-	ft_puthexadecimal_lowercase(127); ft_putchar('\n');
-	ft_puthexadecimal_lowercase(255); ft_putchar('\n');
+	ft_putnbr(42);
+	ft_putchar('\n');
+	ft_putnbr(0);
+	ft_putchar('\n');
+	ft_putnbr(-42); 
+	ft_putchar('\n');
+	ft_putnbr(-2147483648);
+	ft_putchar('\n');
 } */
