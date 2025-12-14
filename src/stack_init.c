@@ -6,7 +6,9 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 19:29:03 by calvares          #+#    #+#             */
-/*   Updated: 2025/12/12 19:29:04 by calvares         ###   ########.fr       */
+/*   Updated: 2025/12/14 19:17:19 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../push_swap.h"
 

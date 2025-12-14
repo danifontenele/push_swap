@@ -6,7 +6,7 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 13:57:27 by calvares          #+#    #+#             */
-/*   Updated: 2025/12/13 20:06:25 by calvares         ###   ########.fr       */
+/*   Updated: 2025/12/14 20:45:00 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,15 @@
 int	main(int ac, char **av)
 {
 	// Declarar e inicializar as stacks(pointers)
-	t_stack_node	*a;
-	t_stack_node	*b;
+	t_node_s	*a;
+	t_node_s	*b;
 
 	a = NULL;
 	b = NULL;
 
 	if (ac == 1 || (ac == 2 && av[1][0] == '\0'))
 		return (1);
-	if (ac == 2)
-		av = split(av[1], ' '); // Testado: OK!
+	parse(ac, av); // Funcao que faz o parsing, caso de erro: codigo termina.
 
 	// Funcao que monta a stack 'a' adicionando os argumentos como um valor do node
 		// lidar com int overflow, duplicatas, erros de sintaxe, inputs devem ter apenas digitos ou '-' '+'

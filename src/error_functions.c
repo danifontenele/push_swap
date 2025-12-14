@@ -1,39 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putaddress.c                                    :+:      :+:    :+:   */
+/*   error_functions.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/09 21:09:36 by calvares          #+#    #+#             */
-/*   Updated: 2025/12/14 19:27:18 by calvares         ###   ########.fr       */
+/*   Created: 2025/12/14 20:27:48 by calvares          #+#    #+#             */
+/*   Updated: 2025/12/14 20:44:01 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../push_swap.h"
 
-int	ft_putaddress_hex(unsigned long nb)
+void	error_and_exit(void)
 {
-	int		re;
-	char	*base;
-
-	re = 0;
-	base = "0123456789abcdef";
-	if (nb >= 16)
-		re += ft_putaddress_hex(nb / 16);
-	re += ft_putchar(base[nb % 16]);
-	return (re);
+	ft_printf("Error\n");
+	exit(1);
 }
 
-int	ft_putaddress(unsigned long nb)
+void	free_split(char **tokens)
 {
-	int	re;
+	int	i;
 
-	if (nb == 0)
-		return (write (1, "(nil)", 5));
-	re = 0;
-	re += write(1, "0x", 2);
-	re += ft_putaddress_hex(nb);
-	return (re);
+	i = 0;
+	while (tokens[i])
+	{
+		free (tokens[i]);
+		i++;
+	}
+	free (tokens);
 }
-
