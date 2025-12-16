@@ -6,7 +6,7 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 19:09:48 by calvares          #+#    #+#             */
-/*   Updated: 2025/12/14 19:17:59 by calvares         ###   ########.fr       */
+/*   Updated: 2025/12/16 15:32:57 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ t_node_s	*add_on_top(t_node_s **head, t_node_s *new_s_node)
 	*head = new_s_node;
 	return (new_s_node);
 }
-// Preciso rever a funcao abaixo
+// Revisar funcao abaixo:
 void	add_down(t_node_s *node_to_insert_after, t_node_s *new_s_node)
 {
 	new_s_node->next = node_to_insert_after->next;

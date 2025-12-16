@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_functions.c                                  :+:      :+:    :+:   */
+/*   parsing_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 20:27:48 by calvares          #+#    #+#             */
-/*   Updated: 2025/12/14 20:44:01 by calvares         ###   ########.fr       */
+/*   Updated: 2025/12/16 13:23:30 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,24 @@ void	free_split(char **tokens)
 		i++;
 	}
 	free (tokens);
+}
+
+long	max_or_min(char *s, int *i)
+{
+	long	limit;
+	int		sign;
+	
+	*i = 0;
+	sign = 1;
+	if (s[*i] == '-' || s[*i] == '+')
+	{
+		if (s[*i] == '-')
+			sign = -1;
+		(*i)++;
+	}
+	if (sign == 1)
+		limit = INT_MAX;
+	else
+		limit = INT_MAX + 1;
+	return (limit);
 }
