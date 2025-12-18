@@ -6,55 +6,65 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 19:09:48 by calvares          #+#    #+#             */
-/*   Updated: 2025/12/16 15:32:57 by calvares         ###   ########.fr       */
+/*   Updated: 2025/12/18 16:58:43 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-// find_last()
-// find_min()
-// find_max()
-// Funcao que inicia uma lista duplamente encadeada.
-
-t_node_s	*new_stack_node(int value)
+t_stack_node	*new_s_node(int value)
 {
-	t_node_s	*result = malloc(sizeof(t_node_s));
-	
-	result->value = value;
-	result->next = NULL;
-	result->prev = NULL;
-	return (result);
+	t_stack_node	*node = malloc(sizeof(t_stack_node));
+	if (!node)
+		return (NULL);
+	node->value = value;
+	node->next = NULL;
+	node->prev = NULL;
+	node->index = -1;
+	node->push_cost = 0;
+	node->above_median = false;
+	node->cheapest = false;
+	node->target_node = NULL;
+	return (node);
 }
 
-t_node_s	*add_on_top(t_node_s **head, t_node_s *new_s_node)
+void	add_in_front(t_stack_node **stack, t_stack_node *new_node)
 {
-	new_s_node->next = *head;
-	(*head)->prev = new_s_node;
-	*head = new_s_node;
-	return (new_s_node);
-}
-// Revisar funcao abaixo:
-void	add_down(t_node_s *node_to_insert_after, t_node_s *new_s_node)
-{
-	new_s_node->next = node_to_insert_after->next;
-	new_s_node->prev = node_to_insert_after;
-	if (node_to_insert_after->next != NULL)
-		node_to_insert_after->next->prev = new_s_node;
-	node_to_insert_after->next = new_s_node;
+	if (!new_node)
+		return ;
+	new_node->prev = NULL;
+	new_node->next = *stack;
+	if (*stack)
+		(*stack)->prev = new_node;
+	*stack = new_node;
 }
 
-int	stacklen(t_node_s *stack)// stack_len: OK
+void	add_in_back(t_stack_node **stack, t_stack_node *new_node)
 {
-	int	counter;
-	
+	t_stack_node *old_last;
+
+	if (!new_node)
+		return ;
+	if (!*stack)
+		*stack = new_node;
+	else
+	{
+		old_last = stack_last(*stack);
+		old_last->next = new_node;
+		new_node->prev = old_last;
+		new_node->next = NULL;
+	}
+}
+
+t_stack_node	*stack_last(t_stack_node *stack)
+{
 	if (!stack)
-		return (0);
-	counter = 0;
+		return (NULL);
 	while (stack)
 	{
+		if (stack->next == NULL)
+			return (stack);
 		stack = stack->next;
-		counter++;
 	}
-	return (counter);
+	return (NULL);
 }

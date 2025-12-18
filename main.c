@@ -6,7 +6,7 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 13:57:27 by calvares          #+#    #+#             */
-/*   Updated: 2025/12/14 22:02:39 by calvares         ###   ########.fr       */
+/*   Updated: 2025/12/18 17:22:42 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,32 @@
 
 int	main(int ac, char **av)
 {
-	// Declarar e inicializar as stacks(pointers)
-	t_node_s	*a;
-	t_node_s	*b;
+	t_stack_node	*a;
+	t_stack_node	*b;
 
 	a = NULL;
 	b = NULL;
-
 	if (ac == 1 || (ac == 2 && av[1][0] == '\0'))
 		return (1);
-	parse(ac, av); // Funcao que faz o parsing, caso de erro: codigo termina.
-
+	if (ac == 2)
+		av = split2(av[1], ' ');
 	// Funcao que monta a stack 'a' adicionando os argumentos como um valor do node
 		// lidar com int overflow, duplicatas, erros de sintaxe, inputs devem ter apenas digitos ou '-' '+'
 			// Se encontrar erros, liberar 'a' e retornar Error
 		// Verificar se cada input e um long int
 			// Caso seja string, converter para long int
 		// Anexar os nodes a stack 'a'
-
+	a = init_stack_a(&a, av + 1);
+	while (a)
+	{
+		ft_printf("%d\n", a->value);
+		a = a->next;
+	}
+	/* while (a->next)
+	{
+		ft_printf("%d\n", a->value);
+		a = a->next;
+	} */
 	//Verificar se 'a' stack esta em ordem:
 		//Se nao, implementar o algoritmo
 			// Checar para 2 numeros:

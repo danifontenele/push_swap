@@ -6,7 +6,7 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 19:09:54 by calvares          #+#    #+#             */
-/*   Updated: 2025/12/14 22:02:36 by calvares         ###   ########.fr       */
+/*   Updated: 2025/12/17 13:51:45 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ static char	**split_util(const char *s, char sep, char **subs)
 	return (subs);
 }
 
-char	**split(char *str, char sep)
+char	**split2(char *str, char sep)
 {
 	char	**result;
 

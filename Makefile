@@ -6,7 +6,7 @@
 #    By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/11 13:55:07 by calvares          #+#    #+#              #
-#    Updated: 2025/12/13 20:07:49 by calvares         ###   ########.fr        #
+#    Updated: 2025/12/17 13:56:22 by calvares         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,8 +23,7 @@ SRCS = \
 	main.c \
 	$(SRC_DIR)/commands.c \
 	$(SRC_DIR)/parsing.c \
-	$(SRC_DIR)/init_a_to_b.c \
-	$(SRC_DIR)/init_b_to_a.c \
+	$(SRC_DIR)/parsing_utils.c \
 	$(SRC_DIR)/split.c \
 	$(SRC_DIR)/stack_init.c \
 	$(SRC_DIR)/stack_utils.c

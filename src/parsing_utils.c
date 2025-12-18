@@ -6,7 +6,7 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 20:27:48 by calvares          #+#    #+#             */
-/*   Updated: 2025/12/16 13:23:30 by calvares         ###   ########.fr       */
+/*   Updated: 2025/12/18 14:35:23 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,35 +18,17 @@ void	error_and_exit(void)
 	exit(1);
 }
 
-void	free_split(char **tokens)
+int	stack_len(t_stack_node *stack)
 {
-	int	i;
+	int	size;
 
-	i = 0;
-	while (tokens[i])
+	if (!stack)
+		return (0);
+	size = 0;
+	while(stack)
 	{
-		free (tokens[i]);
-		i++;
+		stack = stack->next;
+		size++;
 	}
-	free (tokens);
-}
-
-long	max_or_min(char *s, int *i)
-{
-	long	limit;
-	int		sign;
-	
-	*i = 0;
-	sign = 1;
-	if (s[*i] == '-' || s[*i] == '+')
-	{
-		if (s[*i] == '-')
-			sign = -1;
-		(*i)++;
-	}
-	if (sign == 1)
-		limit = INT_MAX;
-	else
-		limit = INT_MAX + 1;
-	return (limit);
+	return (size);
 }
