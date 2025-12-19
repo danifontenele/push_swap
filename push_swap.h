@@ -6,7 +6,7 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 13:55:05 by calvares          #+#    #+#             */
-/*   Updated: 2025/12/18 17:14:03 by calvares         ###   ########.fr       */
+/*   Updated: 2025/12/19 13:54:34 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,11 @@ t_stack_node	*new_s_node(int value);
 void	add_in_front(t_stack_node **stack, t_stack_node *new_node);
 void	add_in_back(t_stack_node **stack, t_stack_node *new_node);
 t_stack_node	*stack_last(t_stack_node *stack);
-// Stack utils
+int	stack_len(t_stack_node *stack);
 
 // Commands
 
 // Algorythm
+int	is_sorted(t_stack_node **stack);
 
 #endif

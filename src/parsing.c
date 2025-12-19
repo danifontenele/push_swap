@@ -6,7 +6,7 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 20:07:34 by calvares          #+#    #+#             */
-/*   Updated: 2025/12/18 17:12:59 by calvares         ###   ########.fr       */
+/*   Updated: 2025/12/19 13:00:16 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,9 @@ int	parse(char *av)
 {
 	long	nbr;
 
-	is_validnbr(av);//Function for syntax check
-	nbr = int_to_long(av); //Turn into int
-	if (nbr > INT_MAX || nbr < INT_MIN) //check int range
+	is_validnbr(av);
+	nbr = int_to_long(av);
+	if (nbr > INT_MAX || nbr < INT_MIN)
 		error_and_exit();
 	return ((int)nbr);
 }

@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing_utils.c                                    :+:      :+:    :+:   */
+/*   is_sorted.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/14 20:27:48 by calvares          #+#    #+#             */
-/*   Updated: 2025/12/19 13:56:22 by calvares         ###   ########.fr       */
+/*   Created: 2025/12/19 13:13:15 by calvares          #+#    #+#             */
+/*   Updated: 2025/12/19 14:02:04 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	error_and_exit(void)
+int	is_sorted(t_stack_node **stack)
 {
-	ft_printf("Error\n");
-	exit(1);
+	t_stack_node	*i;
+
+	i = *stack;
+	if (!i || i->next == NULL) // 0 ou 1 node
+			return (1);
+	while (i && i->next != NULL) // mais de 1 node e enquanto tiver mais nodes
+	{
+		if (i->value > i->next->value)
+			return (0);	
+		i = i->next;
+	}
+	return (1);
 }

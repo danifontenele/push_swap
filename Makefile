@@ -6,7 +6,7 @@
 #    By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/11 13:55:07 by calvares          #+#    #+#              #
-#    Updated: 2025/12/17 13:56:22 by calvares         ###   ########.fr        #
+#    Updated: 2025/12/19 13:21:39 by calvares         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,8 @@ SRCS = \
 	$(SRC_DIR)/parsing_utils.c \
 	$(SRC_DIR)/split.c \
 	$(SRC_DIR)/stack_init.c \
-	$(SRC_DIR)/stack_utils.c
+	$(SRC_DIR)/stack_utils.c \
+	$(SRC_DIR)/is_sorted.c
 
 OBJS = 		$(SRCS:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 19:29:03 by calvares          #+#    #+#             */
-/*   Updated: 2025/12/18 17:26:05 by calvares         ###   ########.fr       */
+/*   Updated: 2025/12/19 12:59:53 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ t_stack_node	*init_stack_a(t_stack_node **a, char **av)
 	int		i;
 	int		value;
 
+	value = 0;
 	i = 0;
 	while (av[i])
 	{
@@ -53,6 +54,5 @@ t_stack_node	*init_stack_a(t_stack_node **a, char **av)
 		i++;
 	}
 	is_duplicated(*a);
-	//Implementar: is_sorted()
 	return (*a);
 }

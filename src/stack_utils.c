@@ -6,7 +6,7 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 19:09:48 by calvares          #+#    #+#             */
-/*   Updated: 2025/12/18 16:58:43 by calvares         ###   ########.fr       */
+/*   Updated: 2025/12/19 13:56:25 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,19 @@ t_stack_node	*stack_last(t_stack_node *stack)
 		stack = stack->next;
 	}
 	return (NULL);
+}
+
+int	stack_len(t_stack_node *stack)
+{
+	int	size;
+
+	if (!stack)
+		return (0);
+	size = 0;
+	while(stack)
+	{
+		stack = stack->next;
+		size++;
+	}
+	return (size);
 }
