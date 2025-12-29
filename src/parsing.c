@@ -6,13 +6,19 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 20:07:34 by calvares          #+#    #+#             */
-/*   Updated: 2025/12/19 13:00:16 by calvares         ###   ########.fr       */
+/*   Updated: 2025/12/27 22:10:25 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	is_validnbr(char *s)
+void	error_and_exit(void)
+{
+	ft_printf("Error\n");
+	exit(1);
+}
+
+static void	is_validnbr(char *s)
 {
 	int	i;
 
@@ -31,7 +37,7 @@ void	is_validnbr(char *s)
 	}
 }
 
-long	int_to_long(char *av)
+static long	int_to_long(char *av)
 {
 	long	nbr;
 	int		sign;

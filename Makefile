@@ -6,7 +6,7 @@
 #    By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/11 13:55:07 by calvares          #+#    #+#              #
-#    Updated: 2025/12/19 13:21:39 by calvares         ###   ########.fr        #
+#    Updated: 2025/12/27 22:14:00 by calvares         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,9 +21,9 @@ PRINTF = 		$(PRINTF_DIR)/libftprintf.a
 
 SRCS = \
 	main.c \
-	$(SRC_DIR)/commands.c \
+	$(SRC_DIR)/commands/push.c \
+	$(SRC_DIR)/commands/swap.c \
 	$(SRC_DIR)/parsing.c \
-	$(SRC_DIR)/parsing_utils.c \
 	$(SRC_DIR)/split.c \
 	$(SRC_DIR)/stack_init.c \
 	$(SRC_DIR)/stack_utils.c \

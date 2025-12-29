@@ -6,12 +6,12 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 19:29:03 by calvares          #+#    #+#             */
-/*   Updated: 2025/12/19 12:59:53 by calvares         ###   ########.fr       */
+/*   Updated: 2025/12/20 17:08:22 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-void	is_duplicated(t_stack_node *stack)
+static void	is_duplicated(t_stack_node *stack)
 {
 	t_stack_node	*i;
 	t_stack_node	*j;
@@ -30,7 +30,7 @@ void	is_duplicated(t_stack_node *stack)
 	}
 }
 
-void	append_node(t_stack_node **a, int value)
+static void	append_node(t_stack_node **a, int value)
 {
 	t_stack_node	*new;
 

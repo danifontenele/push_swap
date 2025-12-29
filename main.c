@@ -6,7 +6,7 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 13:57:27 by calvares          #+#    #+#             */
-/*   Updated: 2025/12/19 13:54:41 by calvares         ###   ########.fr       */
+/*   Updated: 2025/12/27 22:01:06 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ int	main(int ac, char **av)
 	}
 	else	
 		a = init_stack_a(&a, av + 1);
-	//Verificar se 'a' stack esta em ordem:
+	//Verificar se 'a' stack esta em ordem:	OK!
 		//Se nao, implementar o algoritmo
-			// Checar para 2 numeros:
+			// Checar para 2 numeros:		OK!
 				// Se sim, trocar os dois numeros.
 			// Checar para 3 numeros
 				// Se sim, implementar nosso simples "sort three" algorythm
@@ -39,7 +39,9 @@ int	main(int ac, char **av)
 	if (is_sorted(&a) == 0)
 	{
 		if (stack_len(a) == 2)
-			write (1, "sa\n", 3);
+			sa(&a);
+		/* else if (stack_len(&a) == 3)
+			sort_three(); */
 	}
 	return (0);
 }

@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing_utils.c                                    :+:      :+:    :+:   */
+/*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/14 20:27:48 by calvares          #+#    #+#             */
-/*   Updated: 2025/12/19 13:56:22 by calvares         ###   ########.fr       */
+/*   Created: 2025/12/26 16:33:43 by calvares          #+#    #+#             */
+/*   Updated: 2025/12/28 15:14:47 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	error_and_exit(void)
+void	sort_three(t_stack_node *stack)
 {
-	ft_printf("Error\n");
-	exit(1);
+	
 }
