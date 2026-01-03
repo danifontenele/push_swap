@@ -6,7 +6,7 @@
 #    By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/11 13:55:07 by calvares          #+#    #+#              #
-#    Updated: 2025/12/27 22:14:00 by calvares         ###   ########.fr        #
+#    Updated: 2025/12/30 17:13:59 by calvares         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,11 +23,14 @@ SRCS = \
 	main.c \
 	$(SRC_DIR)/commands/push.c \
 	$(SRC_DIR)/commands/swap.c \
+	$(SRC_DIR)/commands/rotate.c \
+	$(SRC_DIR)/commands/rev_rotate.c \
 	$(SRC_DIR)/parsing.c \
 	$(SRC_DIR)/split.c \
 	$(SRC_DIR)/stack_init.c \
 	$(SRC_DIR)/stack_utils.c \
-	$(SRC_DIR)/is_sorted.c
+	$(SRC_DIR)/is_sorted.c \
+	$(SRC_DIR)/sort_three.c
 
 OBJS = 		$(SRCS:.c=.o)
 

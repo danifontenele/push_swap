@@ -6,7 +6,7 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 13:55:05 by calvares          #+#    #+#             */
-/*   Updated: 2025/12/28 15:13:17 by calvares         ###   ########.fr       */
+/*   Updated: 2025/12/30 17:10:46 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,6 @@ void	rrr(t_stack_node **a, t_stack_node **b);
 
 // Algorythm
 int		is_sorted(t_stack_node **stack);
+void	sort_three(t_stack_node *stack);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 13:57:27 by calvares          #+#    #+#             */
-/*   Updated: 2025/12/27 22:01:06 by calvares         ###   ########.fr       */
+/*   Updated: 2025/12/30 17:26:06 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 int	main(int ac, char **av)
 {
 	t_stack_node	*a;
-	/* t_stack_node	*b; */
+	t_stack_node	*b;
 
 	a = NULL;
-	/* b = NULL; */
+	b = NULL;
 	if (ac < 2)
 		return (1);
 	if (ac == 2)
@@ -28,20 +28,13 @@ int	main(int ac, char **av)
 	}
 	else	
 		a = init_stack_a(&a, av + 1);
-	//Verificar se 'a' stack esta em ordem:	OK!
-		//Se nao, implementar o algoritmo
-			// Checar para 2 numeros:		OK!
-				// Se sim, trocar os dois numeros.
-			// Checar para 3 numeros
-				// Se sim, implementar nosso simples "sort three" algorythm
-			// Checar se a stack tem mais de 3 numeros
-				// Se sim, implementar Turk algorythm
 	if (is_sorted(&a) == 0)
 	{
 		if (stack_len(a) == 2)
 			sa(&a);
-		/* else if (stack_len(&a) == 3)
-			sort_three(); */
+		else if (stack_len(a) == 3)
+			sort_three(a);
+		turk_algorythm(&a, &b);
 	}
 	return (0);
 }
