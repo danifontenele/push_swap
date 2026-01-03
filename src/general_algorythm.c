@@ -6,7 +6,7 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 19:53:31 by calvares          #+#    #+#             */
-/*   Updated: 2026/01/03 18:29:34 by calvares         ###   ########.fr       */
+/*   Updated: 2026/01/03 20:22:21 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,10 @@ static void	target_node(t_stack_node *node, t_stack_node *node_b)
 		node->target_node = best;
 }
 
-void set_push_cost()
+void set_push_cost(t_stack_node *a)
 {
-	
+	//Comparar cada no de a com seu target em b
 }
-
 /* set_cheapest */
 
 static void	set_index(t_stack_node *a)
@@ -72,8 +71,8 @@ void	set_data(t_stack_node *a, t_stack_node *b)
 		target_node(tmp_a, b);
 		tmp_a = tmp_a->next; 
 	}
-	/* set_push_cost()
-	set_cheapest() */
+	set_push_cost(a);
+	/* set_cheapest() */
 }
 
 void	turk_algorythm(t_stack_node **a, t_stack_node **b)
