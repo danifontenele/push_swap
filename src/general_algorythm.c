@@ -6,7 +6,7 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 19:53:31 by calvares          #+#    #+#             */
-/*   Updated: 2026/01/03 20:22:21 by calvares         ###   ########.fr       */
+/*   Updated: 2026/01/07 00:43:27 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,31 @@ static void	target_node(t_stack_node *node, t_stack_node *node_b)
 		node->target_node = best;
 }
 
-void set_push_cost(t_stack_node *a)
+void set_push_cost(t_stack_node *a, t_stack_node *b)
 {
-	//Comparar cada no de a com seu target em b
+	int	len_a;
+	int	len_b;
+
+	len_a = stack_len(a);
+	len_b = stack_len(b);
+	while (a)
+	{
+		if (a->above_median == true && a->target_node->above_median == false)
+			a->push_cost = a->index + (len_b - a->target_node->index);
+		else if (a->above_median == false && a->target_node->above_median == true)
+			a->push_cost = a->target_node->index + (len_a - a->index);
+		else if (a->above_median == true && a->target_node->above_median == true)
+			if (a->index > a->target_node->index)
+				a->push_cost = a->index
+			else
+				a->push_cost = a->target_node->index;
+		else
+			if (len_a - a->index > len_b - a->target_node->index)
+				a->push_cost = len_a - a->index
+			else
+				a->push_cost = len_b - a->target_node->index;
+		a = a->next;
+	}
 }
 /* set_cheapest */
 
@@ -71,7 +93,7 @@ void	set_data(t_stack_node *a, t_stack_node *b)
 		target_node(tmp_a, b);
 		tmp_a = tmp_a->next; 
 	}
-	set_push_cost(a);
+	set_push_cost(a, b);
 	/* set_cheapest() */
 }
 
