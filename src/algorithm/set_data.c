@@ -1,18 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   general_algorythm.c                                :+:      :+:    :+:   */
+/*   set_data.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/28 19:53:31 by calvares          #+#    #+#             */
-/*   Updated: 2026/01/07 00:43:27 by calvares         ###   ########.fr       */
+/*   Created: 2026/01/07 15:53:27 by calvares          #+#    #+#             */
+/*   Updated: 2026/01/07 15:57:40 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
-static void	target_node(t_stack_node *node, t_stack_node *node_b)
+void	set_index(t_stack_node *a)
+{
+	int i;
+	int	len;
+	
+	len = stack_len(a);
+	i = 0;
+	while (a)
+	{
+		a->index = i;
+		if (i <= len / 2)
+			a->above_median = true;
+		else
+			a->above_median = false;
+		i++;
+		a = a->next;
+	}
+}
+
+void	target_node(t_stack_node *node, t_stack_node *node_b)
 {
 	t_stack_node	*best;
 	t_stack_node	*tmp;
@@ -34,7 +53,7 @@ static void	target_node(t_stack_node *node, t_stack_node *node_b)
 		node->target_node = best;
 }
 
-void set_push_cost(t_stack_node *a, t_stack_node *b)
+void    set_push_cost(t_stack_node *a, t_stack_node *b)
 {
 	int	len_a;
 	int	len_b;
@@ -60,55 +79,19 @@ void set_push_cost(t_stack_node *a, t_stack_node *b)
 		a = a->next;
 	}
 }
-/* set_cheapest */
-
-static void	set_index(t_stack_node *a)
+void	set_cheapest(t_stack_node *a)
 {
-	int i;
-	int	len;
-	
-	len = stack_len(a);
-	i = 0;
+	t_stack_node	*cheapest_node;
+
+	if (!a)
+		return ;
+	cheapest_node = a;
 	while (a)
 	{
-		a->index = i;
-		if (i <= len / 2)
-			a->above_median = true;
-		else
-			a->above_median = false;
-		i++;
+		a->cheapest = false;
+		if (a->push_cost < cheapest_node->push_cost)
+			cheapest_node = a;
 		a = a->next;
 	}
-}
-
-void	set_data(t_stack_node *a, t_stack_node *b)
-{
-	t_stack_node	*tmp_a;
-	
-	tmp_a = a;
-	set_index(a);
-	set_index(b);
-	while (tmp_a)
-	{
-		target_node(tmp_a, b);
-		tmp_a = tmp_a->next; 
-	}
-	set_push_cost(a, b);
-	/* set_cheapest() */
-}
-
-void	turk_algorythm(t_stack_node **a, t_stack_node **b)
-{
-	t_stack_node	*cheapest;
-	
-	pb(a, b);
-	if (stack_len(a) > 4)
-		pb(a, b);
-	while (stack_len(a) > 3)
-	{
-		set_data(a, b);
-	}
-	sort_three(*a);
-	// function to bring b back to a
-	// code or function to rotate a until it's right
+	cheapest_node->cheapest = true;
 }

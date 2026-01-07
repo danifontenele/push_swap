@@ -6,7 +6,7 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 13:57:27 by calvares          #+#    #+#             */
-/*   Updated: 2025/12/30 17:26:06 by calvares         ###   ########.fr       */
+/*   Updated: 2026/01/07 16:23:30 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main(int ac, char **av)
 			sa(&a);
 		else if (stack_len(a) == 3)
 			sort_three(a);
-		turk_algorythm(&a, &b);
+		the_algorithm(&a, &b);
 	}
 	return (0);
 }

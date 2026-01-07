@@ -6,11 +6,11 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 20:07:34 by calvares          #+#    #+#             */
-/*   Updated: 2025/12/27 22:10:25 by calvares         ###   ########.fr       */
+/*   Updated: 2026/01/07 15:59:04 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 void	error_and_exit(void)
 {

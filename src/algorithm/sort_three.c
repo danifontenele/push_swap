@@ -6,11 +6,11 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 16:33:43 by calvares          #+#    #+#             */
-/*   Updated: 2026/01/03 15:21:28 by calvares         ###   ########.fr       */
+/*   Updated: 2026/01/07 15:57:42 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 t_stack_node	*find_max(t_stack_node *stack)
 {

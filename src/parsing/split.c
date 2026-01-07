@@ -6,11 +6,11 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 19:09:54 by calvares          #+#    #+#             */
-/*   Updated: 2025/12/19 12:39:49 by calvares         ###   ########.fr       */
+/*   Updated: 2026/01/07 15:59:23 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 static size_t	word_counter(char *str, char sep)
 {
