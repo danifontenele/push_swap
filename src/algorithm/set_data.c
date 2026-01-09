@@ -6,7 +6,7 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 15:53:27 by calvares          #+#    #+#             */
-/*   Updated: 2026/01/07 15:57:40 by calvares         ###   ########.fr       */
+/*   Updated: 2026/01/09 12:35:26 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,31 +55,34 @@ void	target_node(t_stack_node *node, t_stack_node *node_b)
 
 void    set_push_cost(t_stack_node *a, t_stack_node *b)
 {
-	int	len_a;
-	int	len_b;
+	int				len_a;
+	int				len_b;
+	t_stack_node	*target;
 
 	len_a = stack_len(a);
 	len_b = stack_len(b);
 	while (a)
 	{
-		if (a->above_median == true && a->target_node->above_median == false)
-			a->push_cost = a->index + (len_b - a->target_node->index);
-		else if (a->above_median == false && a->target_node->above_median == true)
-			a->push_cost = a->target_node->index + (len_a - a->index);
-		else if (a->above_median == true && a->target_node->above_median == true)
-			if (a->index > a->target_node->index)
-				a->push_cost = a->index
+		target = a->target_node;
+		if (a->above_median == true && target->above_median == false)
+			a->push_cost = a->index + (len_b - target->index);
+		else if (a->above_median == false && target->above_median == true)
+			a->push_cost = target->index + (len_a - a->index);
+		else if (a->above_median == true && target->above_median == true)
+			if (a->index > target->index)
+				a->push_cost = a->index;
 			else
-				a->push_cost = a->target_node->index;
+				a->push_cost = target->index;
 		else
-			if (len_a - a->index > len_b - a->target_node->index)
-				a->push_cost = len_a - a->index
+			if (len_a - a->index > len_b - target->index)
+				a->push_cost = len_a - a->index;
 			else
-				a->push_cost = len_b - a->target_node->index;
+				a->push_cost = len_b - target->index;
 		a = a->next;
 	}
 }
-void	set_cheapest(t_stack_node *a)
+
+t_stack_node	*set_cheapest(t_stack_node *a)
 {
 	t_stack_node	*cheapest_node;
 
@@ -94,4 +97,21 @@ void	set_cheapest(t_stack_node *a)
 		a = a->next;
 	}
 	cheapest_node->cheapest = true;
+	return (cheapest_node);
+}
+
+t_stack_node	*find_min(t_stack_node **stack)
+{
+	t_stack_node	*min;
+	t_stack_node	*tmp;
+
+	tmp = *stack;
+	min = tmp;
+	while (tmp)
+	{
+		if (tmp->value < min->value)
+			min = tmp;
+		tmp = tmp->next;
+	}
+	return (min);
 }

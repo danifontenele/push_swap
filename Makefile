@@ -6,7 +6,7 @@
 #    By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/11 13:55:07 by calvares          #+#    #+#              #
-#    Updated: 2026/01/07 16:01:42 by calvares         ###   ########.fr        #
+#    Updated: 2026/01/09 12:43:02 by calvares         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,18 +21,18 @@ PRINTF = 		$(PRINTF_DIR)/libftprintf.a
 
 SRCS = \
 	main.c \
+	$(SRC_DIR)/algorithm/sort_three.c \
+	$(SRC_DIR)/algorithm/general_algorithm.c \
+	$(SRC_DIR)/algorithm/set_data.c
 	$(SRC_DIR)/commands/push.c \
 	$(SRC_DIR)/commands/swap.c \
 	$(SRC_DIR)/commands/rotate.c \
 	$(SRC_DIR)/commands/rev_rotate.c \
 	$(SRC_DIR)/parsing/parsing.c \
 	$(SRC_DIR)/parsing/split.c \
-	$(SRC_DIR)/stack_init.c \
-	$(SRC_DIR)/stack_utils.c \
 	$(SRC_DIR)/parsing/is_sorted.c \
-	$(SRC_DIR)/algorithm/sort_three.c \
-	$(SRC_DIR)/algorithm/general_algorithm.c \
-	$(SRC_DIR)/algorithm/set_data.c
+	$(SRC_DIR)/stack_init/stack_init.c \
+	$(SRC_DIR)/stack_init/stack_utils.c \
 
 OBJS = 		$(SRCS:.c=.o)
 
