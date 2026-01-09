@@ -6,7 +6,7 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 13:55:05 by calvares          #+#    #+#             */
-/*   Updated: 2026/01/09 12:41:24 by calvares         ###   ########.fr       */
+/*   Updated: 2026/01/09 16:19:32 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,12 +60,13 @@ void	rrr(t_stack_node **a, t_stack_node **b);
 
 // Algorythm
 int				is_sorted(t_stack_node **stack);
-void			sort_three(t_stack_node *stack);
+void			sort_three(t_stack_node **stack);
 void			the_algorithm(t_stack_node **a, t_stack_node **b);
 void			set_index(t_stack_node *a);
 void			target_node(t_stack_node *node, t_stack_node *node_b);
 void    		set_push_cost(t_stack_node *a, t_stack_node *b);
 t_stack_node	*set_cheapest(t_stack_node *a);
+t_stack_node	*find_max(t_stack_node *stack);
 t_stack_node	*find_min(t_stack_node **stack);
 
 #endif

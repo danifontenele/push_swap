@@ -6,7 +6,7 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 16:45:17 by calvares          #+#    #+#             */
-/*   Updated: 2025/12/28 15:01:45 by calvares         ###   ########.fr       */
+/*   Updated: 2026/01/09 16:03:18 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,19 @@ static void	swap(t_stack_node **a)
 	t_stack_node	*second;
 	t_stack_node	*third;
 
-	if (!*a || !(*a)->next)
+	if (!a || !*a || !(*a)->next)
 		return ;
 	first = *a;
 	second = (*a)->next;
 	third = (*a)->next->next;
 	second->next = first;
-	first->prev = second;
 	second->prev = NULL;
+	first->prev = second;
 	first->next = third;
 	if (third)
 		third->prev = first;
+	else
+		first->next = NULL;
 	*a = second;
 }
 

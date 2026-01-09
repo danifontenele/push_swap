@@ -6,7 +6,7 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 13:57:27 by calvares          #+#    #+#             */
-/*   Updated: 2026/01/07 16:23:30 by calvares         ###   ########.fr       */
+/*   Updated: 2026/01/09 17:30:43 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,9 @@ int	main(int ac, char **av)
 		if (stack_len(a) == 2)
 			sa(&a);
 		else if (stack_len(a) == 3)
-			sort_three(a);
-		the_algorithm(&a, &b);
+			sort_three(&a);
+		else
+			the_algorithm(&a, &b);
 	}
 	return (0);
 }

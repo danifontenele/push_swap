@@ -6,7 +6,7 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 15:53:27 by calvares          #+#    #+#             */
-/*   Updated: 2026/01/09 12:35:26 by calvares         ###   ########.fr       */
+/*   Updated: 2026/01/09 12:52:29 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ t_stack_node	*set_cheapest(t_stack_node *a)
 	t_stack_node	*cheapest_node;
 
 	if (!a)
-		return ;
+		return NULL;
 	cheapest_node = a;
 	while (a)
 	{

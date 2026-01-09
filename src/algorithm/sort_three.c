@@ -6,7 +6,7 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 16:33:43 by calvares          #+#    #+#             */
-/*   Updated: 2026/01/07 15:57:42 by calvares         ###   ########.fr       */
+/*   Updated: 2026/01/09 16:18:43 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,15 @@ t_stack_node	*find_max(t_stack_node *stack)
 	return (bigger);
 }
 
-void	sort_three(t_stack_node *stack)
+void	sort_three(t_stack_node **stack)
 {
 	t_stack_node	*bigger;
 	
-	bigger = find_max(stack);
-	if (bigger == stack)
-		ra(&stack);
-	else if (bigger == stack->next)
-		rra(&stack);
-	if (stack->value > stack->next->value)
-		sa(&stack);
+	bigger = find_max(*stack);
+	if (bigger == *stack)
+		ra(stack);
+	else if (bigger == (*stack)->next)
+		rra(stack);
+	if ((*stack)->value > (*stack)->next->value)
+		sa(stack);
 }

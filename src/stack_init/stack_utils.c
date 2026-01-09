@@ -6,11 +6,11 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 19:09:48 by calvares          #+#    #+#             */
-/*   Updated: 2025/12/19 13:56:25 by calvares         ###   ########.fr       */
+/*   Updated: 2026/01/09 12:53:11 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 t_stack_node	*new_s_node(int value)
 {
