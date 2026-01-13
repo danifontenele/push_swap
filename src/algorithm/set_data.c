@@ -6,7 +6,7 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 15:53:27 by calvares          #+#    #+#             */
-/*   Updated: 2026/01/09 12:52:29 by calvares         ###   ########.fr       */
+/*   Updated: 2026/01/13 13:40:40 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	set_index(t_stack_node *a)
 {
-	int i;
+	int	i;
 	int	len;
-	
+
 	len = stack_len(a);
 	i = 0;
 	while (a)
@@ -53,7 +53,7 @@ void	target_node(t_stack_node *node, t_stack_node *node_b)
 		node->target_node = best;
 }
 
-void    set_push_cost(t_stack_node *a, t_stack_node *b)
+void	set_push_cost(t_stack_node *a, t_stack_node *b)
 {
 	int				len_a;
 	int				len_b;
@@ -69,15 +69,15 @@ void    set_push_cost(t_stack_node *a, t_stack_node *b)
 		else if (a->above_median == false && target->above_median == true)
 			a->push_cost = target->index + (len_a - a->index);
 		else if (a->above_median == true && target->above_median == true)
-			if (a->index > target->index)
+		{	if (a->index > target->index)
 				a->push_cost = a->index;
 			else
-				a->push_cost = target->index;
+				a->push_cost = target->index;}
 		else
-			if (len_a - a->index > len_b - target->index)
+		{	if (len_a - a->index > len_b - target->index)
 				a->push_cost = len_a - a->index;
 			else
-				a->push_cost = len_b - target->index;
+				a->push_cost = len_b - target->index;}
 		a = a->next;
 	}
 }

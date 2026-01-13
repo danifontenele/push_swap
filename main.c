@@ -6,7 +6,7 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 13:57:27 by calvares          #+#    #+#             */
-/*   Updated: 2026/01/09 17:30:43 by calvares         ###   ########.fr       */
+/*   Updated: 2026/01/13 13:32:52 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int ac, char **av)
 		av = split2(av[1], ' ');
 		a = init_stack_a(&a, av);
 	}
-	else	
+	else
 		a = init_stack_a(&a, av + 1);
 	if (is_sorted(&a) == 0)
 	{

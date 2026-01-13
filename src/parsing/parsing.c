@@ -6,7 +6,7 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 20:07:34 by calvares          #+#    #+#             */
-/*   Updated: 2026/01/07 15:59:04 by calvares         ###   ########.fr       */
+/*   Updated: 2026/01/13 13:46:39 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static void	is_validnbr(char *s)
 	if ((s[i] == '+' || s[i] == '-') && ft_isdigit(s[i + 1]) == 0)
 		error_and_exit();
 	if (s[i] == '+' || s[i] == '-')
-			i++;
+		i++;
 	while (s[i])
 	{
 		if (ft_isdigit(s[i]) == 0)

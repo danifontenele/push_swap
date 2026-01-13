@@ -6,7 +6,7 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 13:55:05 by calvares          #+#    #+#             */
-/*   Updated: 2026/01/09 16:19:32 by calvares         ###   ########.fr       */
+/*   Updated: 2026/01/13 13:54:57 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,48 +25,48 @@ typedef struct s_node
 	int					push_cost;
 	bool				above_median;
 	bool				cheapest;
-	struct s_node	*target_node;
-	struct s_node	*next;
-	struct s_node	*prev;
+	struct s_node		*target_node;
+	struct s_node		*next;
+	struct s_node		*prev;
 }	t_stack_node;
 
 // Handle errors
-char	**split2(char *str, char sep);
-int		parse(char *av);
-void	error_and_exit(void);
+char				**split2(char *str, char sep);
+int					parse(char *av);
+void				error_and_exit(void);
 
 // Stack init
-t_stack_node	*init_stack_a(t_stack_node **a, char **av);
+t_stack_node		*init_stack_a(t_stack_node **a, char **av);
 
 // Nodes init
-t_stack_node	*new_s_node(int value);
-void			add_in_front(t_stack_node **stack, t_stack_node *new_node);
-void			add_in_back(t_stack_node **stack, t_stack_node *new_node);
-t_stack_node	*stack_last(t_stack_node *stack);
-int				stack_len(t_stack_node *stack);
+t_stack_node		*new_s_node(int value);
+void				add_in_front(t_stack_node **stack, t_stack_node *new_node);
+void				add_in_back(t_stack_node **stack, t_stack_node *new_node);
+t_stack_node		*stack_last(t_stack_node *stack);
+int					stack_len(t_stack_node *stack);
 
 // Commands
-void	sa(t_stack_node **a);
-void	sb(t_stack_node **b);
-void	ss(t_stack_node **a, t_stack_node **b);
-void	pa(t_stack_node **a, t_stack_node **b);
-void	pb(t_stack_node **a, t_stack_node **b);
-void	ra(t_stack_node **a);
-void	rb(t_stack_node **b);
-void	rr(t_stack_node **a, t_stack_node **b);
-void	rra(t_stack_node **a);
-void	rrb(t_stack_node **b);
-void	rrr(t_stack_node **a, t_stack_node **b);
+void				sa(t_stack_node **a);
+void				sb(t_stack_node **b);
+void				ss(t_stack_node **a, t_stack_node **b);
+void				pa(t_stack_node **a, t_stack_node **b);
+void				pb(t_stack_node **a, t_stack_node **b);
+void				ra(t_stack_node **a);
+void				rb(t_stack_node **b);
+void				rr(t_stack_node **a, t_stack_node **b);
+void				rra(t_stack_node **a);
+void				rrb(t_stack_node **b);
+void				rrr(t_stack_node **a, t_stack_node **b);
 
 // Algorythm
-int				is_sorted(t_stack_node **stack);
-void			sort_three(t_stack_node **stack);
-void			the_algorithm(t_stack_node **a, t_stack_node **b);
-void			set_index(t_stack_node *a);
-void			target_node(t_stack_node *node, t_stack_node *node_b);
-void    		set_push_cost(t_stack_node *a, t_stack_node *b);
-t_stack_node	*set_cheapest(t_stack_node *a);
-t_stack_node	*find_max(t_stack_node *stack);
-t_stack_node	*find_min(t_stack_node **stack);
+int					is_sorted(t_stack_node **stack);
+void				sort_three(t_stack_node **stack);
+void				the_algorithm(t_stack_node **a, t_stack_node **b);
+void				set_index(t_stack_node *a);
+void				target_node(t_stack_node *node, t_stack_node *node_b);
+void				set_push_cost(t_stack_node *a, t_stack_node *b);
+t_stack_node		*set_cheapest(t_stack_node *a);
+t_stack_node		*find_max(t_stack_node *stack);
+t_stack_node		*find_min(t_stack_node **stack);
 
 #endif

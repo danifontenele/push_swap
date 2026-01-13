@@ -6,7 +6,7 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 20:07:36 by calvares          #+#    #+#             */
-/*   Updated: 2026/01/09 17:31:40 by calvares         ###   ########.fr       */
+/*   Updated: 2026/01/13 13:42:57 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,5 @@ void	pa(t_stack_node **a, t_stack_node **b)
 		b_second->prev = NULL;
 	*b = b_second;
 	*a = b_first;
-
 	ft_printf("pa\n");
 }

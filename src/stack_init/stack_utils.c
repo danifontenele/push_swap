@@ -6,7 +6,7 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 19:09:48 by calvares          #+#    #+#             */
-/*   Updated: 2026/01/09 12:53:11 by calvares         ###   ########.fr       */
+/*   Updated: 2026/01/13 13:54:05 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 t_stack_node	*new_s_node(int value)
 {
-	t_stack_node	*node = malloc(sizeof(t_stack_node));
+	t_stack_node	*node;
+
+	node = malloc(sizeof(t_stack_node));
 	if (!node)
 		return (NULL);
 	node->value = value;
@@ -41,7 +43,7 @@ void	add_in_front(t_stack_node **stack, t_stack_node *new_node)
 
 void	add_in_back(t_stack_node **stack, t_stack_node *new_node)
 {
-	t_stack_node *old_last;
+	t_stack_node	*old_last;
 
 	if (!new_node)
 		return ;
@@ -76,7 +78,7 @@ int	stack_len(t_stack_node *stack)
 	if (!stack)
 		return (0);
 	size = 0;
-	while(stack)
+	while (stack)
 	{
 		stack = stack->next;
 		size++;

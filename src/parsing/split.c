@@ -6,7 +6,7 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 19:09:54 by calvares          #+#    #+#             */
-/*   Updated: 2026/01/07 15:59:23 by calvares         ###   ########.fr       */
+/*   Updated: 2026/01/13 13:48:01 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,17 +51,16 @@ static char	**split_util(const char *s, char sep, char **subs)
 	i = 0;
 	n = 0;
 	start = 0;
-
 	while (s[i])
 	{
-		if (s[i] !=  sep)
+		if (s[i] != sep)
 		{
 			start = i;
 			while (s[i] != sep && s[i] != '\0')
 				i++;
 			subs[n] = ft_substr(s, start, (i - start));
 			if (!subs[n])
-				 return (free_all(subs, n));
+				return (free_all(subs, n));
 			n++;
 		}
 		else

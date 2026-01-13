@@ -6,7 +6,7 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 21:09:36 by calvares          #+#    #+#             */
-/*   Updated: 2025/12/14 19:27:18 by calvares         ###   ########.fr       */
+/*   Updated: 2026/01/13 13:44:33 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,3 @@ int	ft_putaddress(unsigned long nb)
 	re += ft_putaddress_hex(nb);
 	return (re);
 }
-

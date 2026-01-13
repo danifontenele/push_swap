@@ -6,11 +6,12 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 19:29:03 by calvares          #+#    #+#             */
-/*   Updated: 2026/01/09 12:53:06 by calvares         ###   ########.fr       */
+/*   Updated: 2026/01/13 13:49:15 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
+
 static void	is_duplicated(t_stack_node *stack)
 {
 	t_stack_node	*i;
