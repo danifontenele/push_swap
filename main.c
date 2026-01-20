@@ -6,7 +6,7 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 13:57:27 by calvares          #+#    #+#             */
-/*   Updated: 2026/01/13 13:32:52 by calvares         ###   ########.fr       */
+/*   Updated: 2026/01/20 16:22:03 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ int	main(int ac, char **av)
 		else
 			the_algorithm(&a, &b);
 	}
+	leaks_killer(a, b, av, ac);
 	return (0);
 }
