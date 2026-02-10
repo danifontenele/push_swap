@@ -6,7 +6,7 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 13:55:05 by calvares          #+#    #+#             */
-/*   Updated: 2026/01/20 16:23:19 by calvares         ###   ########.fr       */
+/*   Updated: 2026/02/10 15:41:46 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,11 @@ void				set_push_cost(t_stack_node *a, t_stack_node *b);
 t_stack_node		*set_cheapest(t_stack_node *a);
 t_stack_node		*find_max(t_stack_node *stack);
 t_stack_node		*find_min(t_stack_node **stack);
+void				set_push_cost_2(t_stack_node *a, t_stack_node *target,
+						int len_a, int len_b);
 
 // to the memory leaks
-void	leaks_killer(t_stack_node *a, t_stack_node *b, char **av, int ac);
+void				leaks_killer(t_stack_node *a, t_stack_node *b,
+						char **av, int ac);
 
 #endif

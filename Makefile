@@ -6,7 +6,7 @@
 #    By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/11 13:55:07 by calvares          #+#    #+#              #
-#    Updated: 2026/01/20 16:22:28 by calvares         ###   ########.fr        #
+#    Updated: 2026/02/10 15:15:43 by calvares         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ SRCS = \
 	$(SRC_DIR)/algorithm/sort_three.c \
 	$(SRC_DIR)/algorithm/general_algorithm.c \
 	$(SRC_DIR)/algorithm/set_data.c \
+	$(SRC_DIR)/algorithm/set_data_utils.c \
 	$(SRC_DIR)/algorithm/free_all.c \
 	$(SRC_DIR)/commands/push.c \
 	$(SRC_DIR)/commands/swap.c \

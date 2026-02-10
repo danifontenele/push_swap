@@ -6,7 +6,7 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 15:53:27 by calvares          #+#    #+#             */
-/*   Updated: 2026/01/13 13:40:40 by calvares         ###   ########.fr       */
+/*   Updated: 2026/02/10 15:42:03 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,25 +61,8 @@ void	set_push_cost(t_stack_node *a, t_stack_node *b)
 
 	len_a = stack_len(a);
 	len_b = stack_len(b);
-	while (a)
-	{
-		target = a->target_node;
-		if (a->above_median == true && target->above_median == false)
-			a->push_cost = a->index + (len_b - target->index);
-		else if (a->above_median == false && target->above_median == true)
-			a->push_cost = target->index + (len_a - a->index);
-		else if (a->above_median == true && target->above_median == true)
-		{	if (a->index > target->index)
-				a->push_cost = a->index;
-			else
-				a->push_cost = target->index;}
-		else
-		{	if (len_a - a->index > len_b - target->index)
-				a->push_cost = len_a - a->index;
-			else
-				a->push_cost = len_b - target->index;}
-		a = a->next;
-	}
+	target = NULL;
+	set_push_cost_2(a, target, len_a, len_b);
 }
 
 t_stack_node	*set_cheapest(t_stack_node *a)
@@ -87,7 +70,7 @@ t_stack_node	*set_cheapest(t_stack_node *a)
 	t_stack_node	*cheapest_node;
 
 	if (!a)
-		return NULL;
+		return (NULL);
 	cheapest_node = a;
 	while (a)
 	{
