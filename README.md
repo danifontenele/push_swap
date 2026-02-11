@@ -115,18 +115,18 @@ push_swap/
 │   │   ├── general_algorithm.c # Turk algorithm main
 │   │   ├── set_data_utils.c    # Calculation helpers
 │   │   ├── set_data.c    		# Cost calculations
-│   │	├── sort_three.c		# Sorting three elements
-│
-├── commands/          			# Stack operations
-│   │   ├── push.c       		# pa, pb
-│   │   ├── rev_rotate.c       	# rra, rrb, rrr
-│   │   ├── rotate.c     		# ra, rb, rr
-│   │   └── swap.c 				# sa, sb, ss
+│   │	└── sort_three.c		# Sorting three elements
+│	│
+│	├── commands/          		# Stack operations
+│   │	├── push.c       		# pa, pb
+│   │	├── rev_rotate.c    	# rra, rrb, rrr
+│   │	├── rotate.c     		# ra, rb, rr
+│   │	└── swap.c 				# sa, sb, ss
 │   │
-│   ├── parsing/             	# Input handling
-│   │   └── parsing.c          	# Argument parsing & validation
-│   │   └── is_sorted.c         # Check if the stack is sorted
-│   │   └── split.c          	# Split 1 argument with multiple int
+│   ├──	parsing/             	# Input handling
+│   │	├── parsing.c       	# Argument parsing & validation
+│   │	├── is_sorted.c    		# Check if the stack is sorted
+│   │	└── split.c        		# Split 1 argument with multiple int
 │   │
 │   └── stack_init/             # Utility functions
 │       ├── stack_init.c        # Stack init, free, helpers
