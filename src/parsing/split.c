@@ -6,7 +6,7 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 19:09:54 by calvares          #+#    #+#             */
-/*   Updated: 2026/01/13 13:48:01 by calvares         ###   ########.fr       */
+/*   Updated: 2026/02/11 15:27:24 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,11 +75,11 @@ char	**split2(char *str, char sep)
 	char	**result;
 	int		nwords;
 
-	nwords = word_counter(str, sep);
 	if (!str)
 		return (NULL);
+	nwords = word_counter(str, sep);
 	if (nwords == 0)
-		error_and_exit();
+		return (NULL);
 	result = malloc((nwords + 1) * sizeof(char *));
 	if (!result)
 		return (NULL);

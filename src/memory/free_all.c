@@ -6,23 +6,22 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 15:17:49 by calvares          #+#    #+#             */
-/*   Updated: 2026/02/10 15:17:52 by calvares         ###   ########.fr       */
+/*   Updated: 2026/02/11 15:36:57 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-static void	free_arguments(char **av)
+static void	free_arguments(char **args)
 {
 	int	i;
 
-	if (av)
-	{
-		i = 0;
-		while (av[i])
-			free(av[i++]);
-	}
-	free(av);
+	if (!args)
+		return ;
+	i = 0;
+	while (args[i])
+		free(args[i++]);
+	free(args);
 }
 
 static void	free_stacks(t_stack_node **a, t_stack_node **b)
@@ -43,9 +42,15 @@ static void	free_stacks(t_stack_node **a, t_stack_node **b)
 	}
 }
 
-void	leaks_killer(t_stack_node *a, t_stack_node *b, char **av, int ac)
+void	free_it_all(t_stack_node *a, t_stack_node *b, char **args, int ac)
 {
-	if (ac == 2)
-		free_arguments(av);
 	free_stacks(&a, &b);
+	if (ac == 2)
+		free_arguments(args);
+}
+
+void	free_and_error(t_stack_node *a, t_stack_node *b, char **args, int ac)
+{
+	free_it_all(a, b, args, ac);
+	ft_printf("Error\n");
 }

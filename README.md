@@ -97,7 +97,22 @@ ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker_Mac $ARG
 ```
 
 ### Examples
-
+```
+% ./push_swap "42 -15 21 150 0 25"
+pb
+pb
+pb
+ra
+rra
+rra
+pa
+rra
+pa
+rra
+pa
+ra
+ra
+```
 ---
 
 ## Project Structure
@@ -128,11 +143,11 @@ push_swap/
 │   │	├── is_sorted.c    		# Check if the stack is sorted
 │   │	└── split.c        		# Split 1 argument with multiple int
 │   │
-│   └── stack_init/             # Utility functions
-│       ├── stack_init.c        # Stack init, free, helpers
-│       └── stack_utils.c       # Stack normalization
+│   └── stack_init/             # Stack initialization
+│       ├── stack_init.c        # Stack init, handle duplicates
+│       └── stack_utils.c       # Stack utils
 │
-├── libft/                   	# Custom C library
+├── libft/                   	# Custom C library(used: ft_isdigit)
 └── ft_printf/                  # Implemented printf function
 ```
 
@@ -147,13 +162,21 @@ push_swap/
 - [Visualizer](https://push-swap42-visualizer.vercel.app/) - Helpful tool for debugging
 
 ### AI assistance disclosure
-- Assist in the System Design implementation
+- Assist in the System Design implementation(modular monolith)
 - C programing concepts: pointers and doubly-linked lists
 - Multiple tests
 
 ---
 
 ## Validation Checklist
+
+- [x] Compiles with `-Wall -Wextra -Werror`
+- [x] No memory leaks
+- [x] Handles edge cases (empty input, single number, already sorted)
+- [x] Proper error handling (duplicates, non-numeric, overflow)
+- [x] Norminette compliant
+- [x] 100 numbers: < 700 operations ✓
+- [x] 500 numbers: ≤ 5500 operations ✓
 
 ---
 

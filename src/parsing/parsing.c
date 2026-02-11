@@ -6,35 +6,30 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 20:07:34 by calvares          #+#    #+#             */
-/*   Updated: 2026/01/13 13:46:39 by calvares         ###   ########.fr       */
+/*   Updated: 2026/02/11 15:16:28 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	error_and_exit(void)
-{
-	ft_printf("Error\n");
-	exit(1);
-}
-
-static void	is_validnbr(char *s)
+static int	is_validnbr(char *s)
 {
 	int	i;
 
 	i = 0;
 	if (s[i] == '\0')
-		error_and_exit();
+		return (ERROR);
 	if ((s[i] == '+' || s[i] == '-') && ft_isdigit(s[i + 1]) == 0)
-		error_and_exit();
+		return (ERROR);
 	if (s[i] == '+' || s[i] == '-')
 		i++;
 	while (s[i])
 	{
 		if (ft_isdigit(s[i]) == 0)
-			error_and_exit();
+			return (ERROR);
 		i++;
 	}
+	return (SUCCESS);
 }
 
 static long	int_to_long(char *av)
@@ -60,13 +55,15 @@ static long	int_to_long(char *av)
 	return (nbr * sign);
 }
 
-int	parse(char *av)
+int	parse(char *av, int *value)
 {
 	long	nbr;
 
-	is_validnbr(av);
+	if (!is_validnbr(av))
+		return (ERROR);
 	nbr = int_to_long(av);
 	if (nbr > INT_MAX || nbr < INT_MIN)
-		error_and_exit();
-	return ((int)nbr);
+		return (ERROR);
+	*value = (int)nbr;
+	return (SUCCESS);
 }

@@ -6,12 +6,14 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 13:55:05 by calvares          #+#    #+#             */
-/*   Updated: 2026/02/10 15:41:46 by calvares         ###   ########.fr       */
+/*   Updated: 2026/02/11 15:37:55 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+# define ERROR 0
+# define SUCCESS 1
 
 # include <stdbool.h>
 # include <limits.h>
@@ -32,8 +34,11 @@ typedef struct s_node
 
 // Handle errors
 char				**split2(char *str, char sep);
-int					parse(char *av);
-void				error_and_exit(void);
+int					parse(char *av, int *value);
+void				free_and_error(t_stack_node *a, t_stack_node *b,
+						char **args, int ac);
+void				free_it_all(t_stack_node *a, t_stack_node *b,
+						char **args, int ac);
 
 // Stack init
 t_stack_node		*init_stack_a(t_stack_node **a, char **av);

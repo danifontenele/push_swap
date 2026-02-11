@@ -6,13 +6,13 @@
 /*   By: calvares <calvares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 19:29:03 by calvares          #+#    #+#             */
-/*   Updated: 2026/01/13 13:49:15 by calvares         ###   ########.fr       */
+/*   Updated: 2026/02/11 15:37:26 by calvares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-static void	is_duplicated(t_stack_node *stack)
+static int	is_duplicated(t_stack_node *stack)
 {
 	t_stack_node	*i;
 	t_stack_node	*j;
@@ -24,36 +24,43 @@ static void	is_duplicated(t_stack_node *stack)
 		while (j)
 		{
 			if (i->value == j->value)
-				error_and_exit();
+				return (ERROR);
 			j = j->next;
 		}
 		i = i->next;
 	}
+	return (SUCCESS);
 }
 
-static void	append_node(t_stack_node **a, int value)
+static int	append_node(t_stack_node **a, int value)
 {
 	t_stack_node	*new;
 
 	new = new_s_node(value);
 	if (!new)
-		error_and_exit();
+		return (ERROR);
 	add_in_back(a, new);
+	return (SUCCESS);
 }
 
-t_stack_node	*init_stack_a(t_stack_node **a, char **av)
+t_stack_node	*init_stack_a(t_stack_node **a, char **args)
 {
 	int		i;
 	int		value;
 
 	value = 0;
 	i = 0;
-	while (av[i])
+	if (!args)
+		return (NULL);
+	while (args[i])
 	{
-		value = parse(av[i]);
-		append_node(a, value);
+		if (!parse(args[i], &value))
+			return (NULL);
+		if (!append_node(a, value))
+			return (NULL);
 		i++;
 	}
-	is_duplicated(*a);
+	if (!is_duplicated(*a))
+		return (NULL);
 	return (*a);
 }
