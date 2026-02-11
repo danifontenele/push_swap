@@ -101,6 +101,40 @@ ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker_Mac $ARG
 ---
 
 ## Project Structure
+```
+push_swap/
+├── Makefile
+├── README.md
+├── push_swap.h          		# Header file with prototypes
+├── main.c              		# Program entry point
+│
+├── src/
+│   │
+│   ├── algorithm/             	# Sorting algorithms
+│   │   ├── free_all.c          # Free allocated memory
+│   │   ├── general_algorithm.c # Turk algorithm main
+│   │   ├── set_data_utils.c    # Calculation helpers
+│   │   ├── set_data.c    		# Cost calculations
+│   │	├── sort_three.c		# Sorting three elements
+│
+├── commands/          			# Stack operations
+│   │   ├── push.c       		# pa, pb
+│   │   ├── rev_rotate.c       	# rra, rrb, rrr
+│   │   ├── rotate.c     		# ra, rb, rr
+│   │   └── swap.c 				# sa, sb, ss
+│   │
+│   ├── parsing/             	# Input handling
+│   │   └── parsing.c          	# Argument parsing & validation
+│   │   └── is_sorted.c         # Check if the stack is sorted
+│   │   └── split.c          	# Split 1 argument with multiple int
+│   │
+│   └── stack_init/             # Utility functions
+│       ├── stack_init.c        # Stack init, free, helpers
+│       └── stack_utils.c       # Stack normalization
+│
+├── libft/                   	# Custom C library
+└── ft_printf/                  # Implemented printf function
+```
 
 ---
 
@@ -113,6 +147,9 @@ ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker_Mac $ARG
 - [Visualizer](https://push-swap42-visualizer.vercel.app/) - Helpful tool for debugging
 
 ### AI assistance disclosure
+- Assist in the System Design implementation
+- C programing concepts: pointers and doubly-linked lists
+- Multiple tests
 
 ---
 
