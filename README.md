@@ -37,9 +37,13 @@ Sort a random list of integers in ascending order on stack `a`, using the shorte
 1. **For small stacks (until 3 elements)**: Uses hardcoded optimal solution(algorithm/sort_three.c).
 2. **For larger stacks**:
 - Pushes the cheapest element to stack b until there is only three.
-- The cheapest element is the one that takes less movements to be pushed to over the 
-- When the number of elements in stack 'a' is three, sort_three hard coded function is called.
-- After that, the elements of 'b' have to be pushed back to 'a', so the program check the best 
+- The cheapest element is the one that takes less movements to be pushed to over the target.
+- The target of 'a' in 'b' is the the higher value of 'b' that is still smaller than 'a'.
+- If there is no smaller, it stays over the bigger one.
+- When the number of elements in stack 'a' is three, sort_three hard coded algorithm works.
+- After that, the elements of 'b' have to be pushed back to 'a', so the program check the best target.
+- The best target of 'b' in 'a' is the smaller value of 'b' that is still bigger than 'b'.
+- if there is no bigger, so it stays over the smaller one.
 - In the end, the program rotate the stack 'a' until the min value it's on top of the stack.
 
 ### Performance
